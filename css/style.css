@@ -1,0 +1,140 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    width: 100vw;
+    /* height: 200vh; */
+    font-family: 'Open sans';
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(57, 50, 173, 1) */
+    background: #85ADDB;
+}
+
+body>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.wrapper {
+    width: 700px;
+    background: #f0f2f5;
+    border-radius: 5px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .05);
+    overflow: hidden;
+    margin: 30px;
+   
+}
+
+h1.title {
+    /* text-transform: uppercase; */
+    padding: 15px 0;
+    /* margin-left: 25px; */
+    margin: O;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    background-color: #85ADDB;
+    /* border-radius: 10px; */
+    border-bottom: 4px solid #FFF;
+    border-top: 4px solid #FFF;
+    border-left: 4px solid #FFF;
+    border-right: 4px solid #FFF;
+    width: 100%; /* Ajoutez cette propriété pour occuper la largeur du formulaire */
+    box-sizing: border-box; /* Incluez cela pour prendre en compte le padding et la bordure */
+}
+
+
+
+.form {
+    width: 700px;
+}
+
+.myform {
+    background: #f0f2f5;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    
+}
+
+.myform label {
+    display: block;
+    color: #85ADDB;
+    font-weight: bold;
+    font-size: .8rem;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+.myform input {
+    /* border: 0; */
+    outline: 0;
+    height: 50px;
+    background: #FFF;
+    width: 100%;
+    border-radius: 5px;
+    color: rgb(56, 55, 55);
+    font-weight: 700;
+    font-size: .9rem;
+    text-indent: 15px;
+    /* border: 2px solid transparent;
+    transition: border 250ms; */
+}
+input{
+    /* border: 2px solid #85ADDB; */
+}
+#fichier input[type="file"] {
+    display: none;
+    
+  }
+ #fichier label {
+    border: 2px solid #85ADDB;
+    background-color: #FFF;
+    color: #85ADDB;
+    outline: 0;
+    height: 50px;
+    padding: 15px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-top: 39px; */
+  }
+.full-width {
+    grid-column: -1 / 1
+}
+
+.button {
+    grid-column: -1 / 1;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.button button {
+    border: 0;
+    outline: 0;
+    width: 120px;
+    height: 50px;
+    border-radius: 50px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: .9rem;
+    cursor: pointer;
+    background: linear-gradient(356deg, #85ADDB 0%, #85ADDB 100%);
+    
+}
+
+.button button:hover {
+    background: #85ADDB;
+}
+
+
