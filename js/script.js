@@ -109,6 +109,8 @@ function f_myForm(){
 	else{
 		this.changerBon("mdp");
 	}
+
+	return true;
 }
 function changerBad(variable){
 	document.getElementById(variable).className="bad";

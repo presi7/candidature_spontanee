@@ -1,11 +1,17 @@
 <?php
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $titre = $_POST["Titre"];
     // $status = $_POST["Status"];
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
     $adresse = $_POST["adresse"];
-    $mobile = $_POST["ùobile"];
+    $mobile = $_POST["mobile"];
     $email = $_POST["email"];
     $domaine = $_POST["domaine"];
     // Note: Vous devez également traiter les fichiers téléchargés, mais cela dépend de la manière dont vous souhaitez les gérer.
@@ -53,11 +59,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(7, $cv);
     $stmt->bindParam(8, $motivation);
 
+    // Créer les répertoires s'ils n'existent pas
+    if (!file_exists("motivation")) {
+        mkdir("motivation");
+    }
+
+    if (!file_exists("cv")) {
+        mkdir("cv");
+    }
+
+    if (move_uploaded_file($_FILES["motivation"]["tmp_name"], "motivation/" . $motivation) && 
+    move_uploaded_file($_FILES["cv"]["tmp_name"], "cv/" . $cv)) {
+    // Déplacement réussi
+    } else {
+        // Affichez des messages d'erreur si nécessaire
+        echo "Erreur lors du déplacement des fichiers.";
+    }
+
+
+
     // Exécution de la requête préparée
     $stmt->execute();
 
     echo "Les données ont été enregistrées avec succès dans la base de données.";
-    header("Refresh: 1; URL=formulaire.php"); // Redirection vers le formulaire après 5 secondes
+    header("Refresh: 5; URL=formulaire.php"); // Redirection vers le formulaire après 5 secondes
 
 
     // Fermer la connexion à la base de données

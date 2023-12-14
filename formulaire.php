@@ -18,7 +18,7 @@
                 <div class="form">
                     <h1 class="title text-center">Candidature Spontanée</h1>
 
-                    <form action="traitement.php" class="myform" method="post" enctype="multipart/form-data">
+                    <form action="traitement.php" class="myform" method="post" enctype="multipart/form-data" onsubmit="return f_myForm();">
                         <div class="form-group">
                             <label for="nom">Nom *</label>
                             <input type="text" name="nom" id="nom" class="form-control" value="" required>
@@ -26,7 +26,7 @@
 
                         <div class="form-group">
                             <label for="prenom">Prénom *</label>
-                            <input type="text" name="prenom" id="prenom" class="form-control" value="" required>
+                            <input type="text" name="prenom" id="pronsubmit=" return f_myForm(); class="form-control" value="" required>
                         </div>
 
                         <div class="form-group">
